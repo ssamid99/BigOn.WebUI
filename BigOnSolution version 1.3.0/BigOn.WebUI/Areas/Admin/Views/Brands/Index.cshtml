@@ -1,0 +1,104 @@
+﻿@model IEnumerable<BigOn.WebUI.Models.Entities.Brand>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+<div class="page-wrapper">
+    <!-- Page-header start -->
+    <div class="page-header">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <div class="d-inline">
+                        <h4>Bootstrap Border Sizes</h4>
+                        <span>
+                            lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb-title">
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a href="../index.html"> <i class="feather icon-home"></i> </a>
+                        </li>
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a href="#!">Bootstrap Table</a>
+                        </li>
+                        <li class="breadcrumb-item" style="float: left;">
+                            <a href="#!">Border Table</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <!-- Horizontal-border table start -->
+        <div class="card">
+            <div class="card-header">
+                <h5>Horizontal Borders</h5>
+                <span>
+                    Example of <code>horizontal</code> table borders. This is a
+                    default table border style attached to <code>.table</code> class.
+                    All borders have the same grey color and style, table itself doesn't
+                    have a border, but you can add this border using
+                    <code>.table-framed</code> class added to the table with
+                    <code>.table</code> class.
+                </span>
+
+            </div>
+            <div class="card-block table-border-style">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CreatedDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DeletedDate)
+                                </th>
+                                <th>
+                                        <a asp-action="Create">Create New</a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeletedDate)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Horizontal-border table end -->
+    </div>
+</div>
